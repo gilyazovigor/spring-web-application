@@ -19,6 +19,7 @@ import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
+import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 import org.jooq.sources.Keys;
 import org.jooq.sources.Public;
@@ -66,7 +67,7 @@ public class Organization extends TableImpl<OrganizationRecord> {
     /**
      * The column <code>public.Organization.Organization_OrganizationID</code>.
      */
-    public final TableField<OrganizationRecord, Long> ORGANIZATION_ORGANIZATIONID = createField("Organization_OrganizationID", org.jooq.impl.SQLDataType.BIGINT, this, "");
+    public final TableField<OrganizationRecord, Integer> ORGANIZATION_ORGANIZATIONID = createField("Organization_OrganizationID", SQLDataType.INTEGER, this, "");
 
     /**
      * Create a <code>public.Organization</code> table reference

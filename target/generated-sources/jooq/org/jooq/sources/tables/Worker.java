@@ -19,6 +19,7 @@ import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
+import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 import org.jooq.sources.Keys;
 import org.jooq.sources.Public;
@@ -66,12 +67,12 @@ public class Worker extends TableImpl<WorkerRecord> {
     /**
      * The column <code>public.Worker.Worker_OrganizationID</code>.
      */
-    public final TableField<WorkerRecord, Long> WORKER_ORGANIZATIONID = createField("Worker_OrganizationID", org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
+    public final TableField<WorkerRecord, Integer> WORKER_ORGANIZATIONID = createField("Worker_OrganizationID", SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
      * The column <code>public.Worker.Worker_WorkerID</code>.
      */
-    public final TableField<WorkerRecord, Long> WORKER_WORKERID = createField("Worker_WorkerID", org.jooq.impl.SQLDataType.BIGINT, this, "");
+    public final TableField<WorkerRecord, Integer> WORKER_WORKERID = createField("Worker_WorkerID", SQLDataType.INTEGER, this, "");
 
     /**
      * Create a <code>public.Worker</code> table reference
