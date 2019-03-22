@@ -32,8 +32,6 @@ public class AppController {
     {
         //String res_org = "";
 
-
-
         return "db_html";
     }
 

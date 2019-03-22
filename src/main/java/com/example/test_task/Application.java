@@ -27,35 +27,24 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
 
-
         //Тут, в Контроллере, должны быть только передача данных в сервис!
         //ниже написанные запросы пока для тестирорвания
 
         DataSource dataSource = DatasourceConfig.createDataSource();
-      //  OrganizationRecord organizationRecord =
-               Result<OrganizationRecord> organizationRecord =
-                DSL.using(dataSource, SQLDialect.POSTGRES)
-                        .selectFrom(ORGANIZATION)
-                        .where(ORGANIZATION.ORGANIZATIONID.between(4,8))
-                        .fetch();
-     //                   .fetchAny();
-        System.out.println(organizationRecord);
 
-        System.out.println("//////////////////////////");
+        //Service.deleteOrganization(dataSource, 10);
+        //Service.deleteWorker(dataSource,31);
+        //Service.updateWorker(dataSource, 30, "Тест Тестов Тестович", 10, null, "Тестов1 Тест Тестович");
+        //Service.updateOrganization(dataSource, 10, "GazpromTest", 1, "GazpromTest2");
+        //Service.insertWorker(dataSource, "ВторойТест Тестов Тестович", 10, null);
+        //Service.insertOrganization(dataSource, "GazpromSecondTest", 1);
+        System.out.println("///////////////////////////////////////////////////////");
+        Service.getOrganizations(dataSource);
+        System.out.println("///////////////////////////////////////////////////////");
+        Service.getWorkers(dataSource);
 
-        Result<?> orgList =
-                DSL.using(dataSource, SQLDialect.POSTGRES)
-                      .select(ORGANIZATION.ORGANIZATIONID,
-                              ORGANIZATION.ORGANIZATIONNAME,
-                              ORGANIZATION.ORGANIZATION_ORGANIZATIONID
-                                                            //СЮДА ЕЩЕ COUNT РАБОТНИКОВ!!!!!!!!!!!!!!!!!!
-                      )
-                        .from(ORGANIZATION)
-                        .join(WORKER)
-                        .on(ORGANIZATION.ORGANIZATIONID.eq(WORKER.WORKER_ORGANIZATIONID))
-                        .where()
-                        .fetch();
-        System.out.println(orgList);
+
+
     }
 
 }

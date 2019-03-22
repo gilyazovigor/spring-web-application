@@ -136,7 +136,7 @@
                         <driver>org.postgresql.Driver</driver>
                         <url>jdbc:postgresql://localhost:5432/Organizations</url>
                         <user>postgres</user>
-                        w<password>1</password>
+                        <password>1</password>
 
                     </jdbc>
                     <generator>
